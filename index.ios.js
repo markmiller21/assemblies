@@ -2,11 +2,23 @@ import React, { Component } from 'react';
 import { AppRegistry, Navigator } from 'react-native';
 
 import Landing from './application/components/Landing';
+import { globals } from './application/styles';
 
 class assemblies extends Component {
   render() {
     return (
-      <Landing />
+      <Navigator
+        style={globals.flex}
+        initialRoute={{ name: 'Landing' }}
+        renderScene={(route, navigator) => {
+          switch(route.name){
+            case 'Landing':
+              return (
+                <Landing navigator={navigator}/>
+            );
+          }
+        }}
+      />
     );
   }
 }
