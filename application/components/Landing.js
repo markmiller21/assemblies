@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpactiy } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import NavigationBar from 'react-native-navbar';
@@ -17,20 +17,20 @@ class Landing extends Component {
 		});
 	}
 	render() {
-		let titleConfig = { title: 'Landing', tintColor: 'white'};
+		let titleConfig = { title: 'Landing', tintColor: 'white' };
 		return (
 			<View style={globals.flexContainer}>
 				<NavigationBar
-					title={titleCongig}
-					tintColor={Collors.brandPrimary}
+					title={titleConfig}
+					tintColor={Colors.brandPrimary}
 				/>
 				<View style={globals.flexCenter}>
-					<Text syle={globals.h2}>
+					<Text style={globals.h2}>
 						This is the Landing Page
 					</Text>
-					<TouchableOpactiy onPress={this.visitDashboard}>
+					<TouchableOpacity onPress={this.visitDashboard}>
 						<Text>Go to the Dashboard</Text>
-					</TouchableOpactiy>
+					</TouchableOpacity>
 				</View>
 			</View>
 		)
