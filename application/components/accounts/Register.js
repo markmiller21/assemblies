@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 
 import NavigationBar from 'react-native-navbar';
 import Icon from 'react-native-vector-icons/Ionicons';
-import BackButton from '../../shared/BackButton';
+import BackButton from '../shared/BackButton';
 import Colors from '../../styles/colors';
 import { globals } from '../../styles';
 
