@@ -6,12 +6,25 @@ import ActivityView from './activity/ActivityView';
 import MessagesView from './messages/MessagesView';
 import ProfileView from './profile/ProfileView';
 
+import { Headers } from '../fixtures';
+import { API } from '../config';
+
 class Dashboard extends Component {
 	constructor(props) {
 		super(props);
+    this.logout = this.logout.bind(this);
 		this.state = { selectedTab: 'Activity' };
 	}
+  logout() {
+    fetch(`${API}/users/logout`, { method: 'POST'})
+    .then(response => response.json())
+    .then(data => this.props.logout())
+    .catch(err => {})
+    .done();
+  }
 	render() {
+    let { user } = this.props;
+    console.log(user);
 		return (
 			<TabBarIOS>
         <TabBarItemIOS
@@ -36,7 +49,7 @@ class Dashboard extends Component {
           iconName='ios-person'
           onPress={() => this.setState({ selectedTab: 'Profile' })}
         >
-          <ProfileView />
+          <ProfileView currentUser={user} logout={this.logout}/>
         </TabBarItemIOS>
       </TabBarIOS>
 		)
