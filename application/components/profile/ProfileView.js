@@ -4,7 +4,6 @@ import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import NavigationBar from 'react-native-navbar';
 import Colors from '../../styles/colors';
-// import { currentUser } from '../../fixtures';
 import { globals, profileStyles } from '../../styles';
 const styles = profileStyles;
 
@@ -12,6 +11,7 @@ class ProfileView extends Component{
   render() {
     let titleConfig = { title: 'Profile', tintColor: 'white' };
     let { currentUser } = this.props;
+    console.log(currentUser);
     return (
       <View style={[globals.flexContainer, globals.inactive]}>
         <NavigationBar

@@ -4,6 +4,7 @@ import { AppRegistry, Navigator } from 'react-native';
 import Landing from './application/components/Landing';
 import Dashboard from './application/components/Dashboard';
 import Register from './application/components/accounts/Register';
+import RegisterConfirm from './application/components/accounts/RegisterConfirmation';
 import Login from './application/components/accounts/Login';
 import { globals } from './application/styles';
 
@@ -40,6 +41,7 @@ class assemblies extends Component {
                 <Dashboard 
                   navigator={navigator}
                   logout={this.logout}
+                  user={this.state.user}
                 />
             );
             case 'Register':
@@ -48,12 +50,12 @@ class assemblies extends Component {
               );
             case 'RegisterConfirmation':
               return (
-                <RegisterConfirmation
+                <RegisterConfirm
                   {...route}
                   updateUser={this.updateUser}
                   navigator={navigator}
                 />
-              );
+            );
             case 'Login':
               return (
                 <Login 
